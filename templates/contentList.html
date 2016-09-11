@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>九大开示</title>
+    {% load staticfiles %}
+
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="{% static "common/css/bootstrap.min.css" %}">
+
+    <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="{% static "common/css/bootstrap-theme.min.css" %}">
+
+
+    <!--foot的外部css文件-->
+    <link rel="stylesheet" href="{% static "common/css/blog.css" %}">
+    <link rel="stylesheet" href="{% static "common/css/launch.css" %}">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="{% static "common/js/jquery.min.js" %}"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="{% static "common/js/bootstrap.min.js" %}"></script>
+
+    <!--自己修改后的css-->
+    <link rel="stylesheet" href="{% static "common/css/style.css" %}">
+
+</head>
+<body>
+<div class="c-main-nav c-main-nav--dark">
+    <div class="o-container">
+        <div class="o-flexy__block">
+            <div class="navbar-collapse collapse u-mrg-t-0 u-pad-h-0@md" >
+                <div class="o-flexy@md u-pad-v-2 u-pad-v-0@md">
+                    <div class="o-flexy__item">
+                        <ul class="navbar-nav c-list c-list--inline@md u-mrg-b-0">
+                            <li class="">
+                                <a href="#" tabindex="2">
+                                    —— 贤双法师九大开示系列 ——
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="o-container">
+    <div class="tab-pane fade in active" id="most-recent">
+        <div class="o-row-flex">
+            {% for item in contentlist %}
+            <div class="o-col-6 o-col-4@md post">
+
+                <a href="{{ item.page_url }}"  class="post-box">
+                    <figure>
+                        <img src="{% static item.image_url %}" alt="What’s Your Support Stack?">
+                    </figure>
+                    <p>
+                            <span class="category">
+                            <em>{{ item.series_name }}</em>
+                            </span>
+                        <br>
+                        {{ item.title }}
+                    </p>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
