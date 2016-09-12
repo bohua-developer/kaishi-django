@@ -1,0 +1,2 @@
+# kaishi-django
+second version
