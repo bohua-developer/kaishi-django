@@ -21,5 +21,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index),
     url(r'^serise/(\d{1,2})/$',views.content_list),
+    url(r'^serise/all/$', views.content_all_list),
+    url(r'^serise/all/(\d{1,2})/(\d{1,2})$', views.the_content),
     url(r'^serise/(\d{1,2})/(\d{1,2})$', views.the_content),
 ]

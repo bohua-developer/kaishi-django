@@ -14,6 +14,7 @@ class LevelDirectory(models.Model):
     status = models.IntegerField()
 
 class SecondaryDirectory(models.Model):
+    uuid = models.CharField(max_length=30)
     title = models.TextField()
     author = models.CharField(max_length=30)
     summary = models.TextField()

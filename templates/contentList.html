@@ -35,7 +35,7 @@
                     <div class="o-flexy__item">
                         <ul class="navbar-nav c-list c-list--inline@md u-mrg-b-0">
                             <li class="">
-                                <a href="#" tabindex="2">
+                                <a href="/serise/all/" tabindex="2">
                                     —— 贤双法师九大开示系列 ——
                                 </a>
                             </li>
@@ -51,8 +51,11 @@
         <div class="o-row-flex">
             {% for item in contentlist %}
             <div class="o-col-6 o-col-4@md post">
-
-                <a href="{{ item.page_url }}"  class="post-box">
+                    {% if all_One  %}
+                        <a href="{{ item.uuid }}"  class="post-box">
+                    {% else %}
+                        <a href="{{ item.page_url }}"  class="post-box">
+                    {% endif %}
                     <figure>
                         <img src="{% static item.image_url %}" alt="What’s Your Support Stack?">
                     </figure>

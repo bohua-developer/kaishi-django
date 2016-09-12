@@ -19,6 +19,11 @@ def content_list(request,offset):
     re_content = {"contentlist":contentList,}
     return render_to_response("contentList.html",re_content)
 
+def content_all_list(request):
+    contentList = SecondaryDirectory.objects.all()
+    re_content = {"contentlist": contentList,"all_One":True,}
+    return render_to_response("contentList.html", re_content)
+
 def the_content(request,offset1,offset2):
     try:
         offset1 = int(offset1)
