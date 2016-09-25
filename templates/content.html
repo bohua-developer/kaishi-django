@@ -35,9 +35,11 @@
         <div class="feature-contents">
             <h2>
                   <span class="content-title">
+                    {% autoescape off %}
                     {% for item in the_content %}
                         {{ item.title }}
                     {% endfor %}
+                    {% endautoescape %}
                   </span>
             </h2>
         </div>
